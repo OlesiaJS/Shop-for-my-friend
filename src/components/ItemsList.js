@@ -1,9 +1,10 @@
-// import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import { addFavourite } from "../features/account/accountSlice";
 
 export default function ItemsList() {
     //     const dispatch = useDispatch();
-    //     const products = useSelector((state) => state.products.value);
+    const products = useSelector((state) => state.products.value);
+    console.log(products);
     //     const user = useSelector((state) => state.account.value);
     //     const checkIfFavourite = (id) => {
     //         return user.favourites.find(el => el === id);

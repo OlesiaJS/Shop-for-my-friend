@@ -17,7 +17,7 @@ export default function Header() {
                     Hi,   {/*{!user.name && (*/}
                     <Link to="/account" className="header__user" id="headerUser">
                         Log in
-                    </Link>) {/* {user.name} */}
+                    </Link> {/* ){user.name} */}
 
                     <div className="header__shop">
                         <Link to="/favourites" id="headerFavourites">
