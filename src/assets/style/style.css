@@ -155,8 +155,8 @@ a {
 }
 
 .header__user {
-    color: white;
-    border-bottom: 1px dashed white;
+    color: #000000;
+    border-bottom: 1px dashed #000000;
     margin-left: 5px;
     margin-top: 1px;
     transition: 0.2s;
@@ -248,9 +248,11 @@ a {
     border: solid 15px;
     flex-direction: column;
     border-image: url(../img-back/border.png) 80 round repeat; 
+    padding: 10px;
 }
 .footer__FB {
+    width: 120px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
