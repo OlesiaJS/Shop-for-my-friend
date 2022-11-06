@@ -1,12 +1,15 @@
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-// import { logout } from "../features/account/accountSlice";
-// import { useDispatch } from "react-redux";
+import { logout } from "../features/account/accountSlice";
+import { useDispatch } from "react-redux";
+
 
 export default function Header() {
-    // const dispatch = useDispatch();
-    // const user = useSelector((state) => state.account.value);
-    // console.log(user);
+
+    const dispatch = useDispatch();
+
+    const user = useSelector((state) => state.account.value);
+    console.log(user);
     return <header className="header">
         <div className="container">
             <div className="header__container">
@@ -14,22 +17,25 @@ export default function Header() {
                     <img src="images/logo.jpg" alt="logo" height="50" />
                 </Link>
                 <div className="header__info">
-                    Hi,   {/*{!user.name && (*/}
-                    <Link to="/account" className="header__user" id="headerUser">
-                        Log in
-                    </Link> {/* ){user.name} */}
+                    Hi,   {!user.name && (
+                        <Link to="/account" className="header__user" id="headerUser">
+                            Log in
+                        </Link>)} {user.name}
 
                     <div className="header__shop">
-                        <Link to="/favourites" id="headerFavourites">
+                        <Link to={user.name
+                            ? "/favourites"
+                            : "/account"
+                        } id="headerFavourites">
                             <img src="images/favourite.png" alt="favourite" height="30" />
-                            <span className="header__shop--count" id="headerFavouritesCount">{/*{user.favourites.length}*/}</span>
+                            <span className="header__shop--count" id="headerFavouritesCount">{user.favourites.length}</span>
                         </Link>
                     </div>
-                    {/* {user.name && (
+                    {user.name && (
                         <button className="header__logout" onClick={() =>
                             dispatch(logout())
                         } style={{ display: 'block' }} id="headerLogout">Log out</button>
-                    )} */}
+                    )}
 
                 </div>
             </div>

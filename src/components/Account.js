@@ -1,25 +1,24 @@
 import db from "../db";
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { login } from "../features/account/accountSlice";
+import { useDispatch } from "react-redux";
+import { login } from "../features/account/accountSlice";
 
 export default function Account() {
-  const [userEmail, setUserEmail] = useState("ivan@gmail.com");
+  const [userEmail, setUserEmail] = useState("test@gmail.com");
   const [userPassword, setUserPassword] = useState("123");
   const [showWrongUser, setshowWrongUser] = useState(true);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
   const handleSubmit = (event) => {
-    console.log(userEmail);
-    console.log(showWrongUser);
     event.preventDefault();
     // Find User and Match Password
     // Get userDb from Database
     const isUserExist = db.usersDb.find((el) => el.email === userEmail);
-    console.log(isUserExist);
+
     if (isUserExist) {
       if (isUserExist.password === userPassword) {
         setshowWrongUser(true);
-        // dispatch(login(isUserExist));
+        dispatch(login(isUserExist));
         // window.location.href = "/favourites";
       }
     }

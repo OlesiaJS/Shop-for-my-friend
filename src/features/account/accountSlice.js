@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 export const accountSlice = createSlice({
   name: "account",
   initialState: {
@@ -22,6 +23,12 @@ export const accountSlice = createSlice({
     addFavourite: (state, action) => {
       state.value.favourites = [...state.value.favourites, action.payload];
     },
+    deleteFavourite: (state, action) => {
+      const { id } = action.payload;
+      state.value.favourites.splice(id, 1);
+      // state.value.favourites = state.value.favourites.filter(item => item.id !== id);
+
+    },
     login: (state, action) => {
       state.value = {
         name: action.payload.name,
@@ -32,6 +39,6 @@ export const accountSlice = createSlice({
   },
 });
 
-export const { login, logout, addFavourite } = accountSlice.actions;
+export const { login, logout, addFavourite, deleteFavourite } = accountSlice.actions;
 
 export default accountSlice.reducer;

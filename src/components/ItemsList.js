@@ -1,18 +1,19 @@
 import { useSelector } from 'react-redux';
-// import { addFavourite } from "../features/account/accountSlice";
+import { addFavourite } from "../features/account/accountSlice";
+import { useDispatch } from "react-redux";
 
 export default function ItemsList() {
-    //     const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const products = useSelector((state) => state.products.value);
     console.log(products);
-    //     const user = useSelector((state) => state.account.value);
-    //     const checkIfFavourite = (id) => {
-    //         return user.favourites.find(el => el === id);
-    //     };
+    const user = useSelector((state) => state.account.value);
+    const checkIfFavourite = (id) => {
+        return user.favourites.find(el => el === id);
+    };
     return <section className="category" data-name="product">
         <div className="category__container">   {products.map((item) =>
             <><div className="product">
-                {/* <button className="product__favourite" onClick={() => {
+                <button className="product__favourite" onClick={() => {
                     dispatch(addFavourite(item.id));
                 }}>
                     <img src={checkIfFavourite(item.id)
@@ -20,7 +21,7 @@ export default function ItemsList() {
                         : "images/product__favourite.png"
                     }
                         alt="favourite" height="20" />
-                </button> */}
+                </button>
                 <img src={"images/products/" + item.img + ".jpg"} className="product__img" alt="imgName"
                     width={'100%'} />
                 <p className="product__title">{item.title}</p>

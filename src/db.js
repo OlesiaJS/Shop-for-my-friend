@@ -294,8 +294,8 @@ const PRODUCTS = [
 
 const USERS = [
   {
-    name: "Ivan",
-    email: "ivan@gmail.com",
+    name: "Test",
+    email: "test@gmail.com",
     password: "123",
     favourites: [9, 18, 7],
     status: false,
