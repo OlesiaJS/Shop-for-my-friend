@@ -234,6 +234,134 @@ a {
     border-bottom: 0;
 }
 
+.product {
+    box-shadow: 0px 2px 2px rgba(0, 8, 29, 0.05), 0px 0px 2px rgba(0, 8, 29, 0.06), 0px 1px 3px rgba(0, 8, 29, 0.08);
+    width: 18%;
+    min-width: 200px;
+    background: white;
+    border-radius: 3px;
+    padding: 13px;
+    margin: 0 15px 15px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 576px) {
+    .product {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.product__favourite {
+    border: none;
+    background: none;
+    padding: 0;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.product__img {
+    margin: 0 auto;
+    display: block;
+    min-height: 100px;
+    background-size: cover;
+   background-position: center;
+}
+
+.product__title {
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0 0 10px 0;
+}
+
+.product__sale {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product__sale--old {
+    text-decoration: line-through;
+    color: #9e9e9e;
+}
+
+.product__sale--percent {
+    background: #4caf50;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.product__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.product__cart {
+    border: none;
+    background: #eb2335;
+    border-radius: 3px;
+    padding: 4px 13px 2px 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.product__cart--in {
+    background: #4caf50;
+}
+
+.product__cart--ordered {
+    background: #9e9e9e;
+    pointer-events: none;
+}
+
+.userForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.userForm .title {
+    margin: 0 0 5px 0;
+    font-size: 25px;
+}
+
+.userForm .desription {
+    margin: 0 0 20px 0;
+}
+
+.userForm .error {
+    display: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+    color: #a94442;
+    background-color: #f2dede;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.userForm .error.active {
+    display: block;
+}
+
+.userForm label {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
 
 
 /* Footer  */

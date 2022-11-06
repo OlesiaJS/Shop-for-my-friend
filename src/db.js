@@ -37,7 +37,7 @@ const PRODUCTS = [
   {
     id: 5,
     title: "Christmas toy green",
-    img: "Christmas-toy-green",
+    img: "Christmas-toys-green",
     price: 8,
     sale: false,
     categories: ["Christmas toy"],
@@ -45,7 +45,7 @@ const PRODUCTS = [
   {
     id: 6,
     title: "Christmas toys heart",
-    img: "Christmas toys heart",
+    img: "Christmas-toys-heart",
     price: 9,
     sale: false,
     categories: ["Christmas toy"],
@@ -140,7 +140,7 @@ const PRODUCTS = [
   {
     id: 17,
     title: "Cutting board red",
-    img: "cutting-board-ed",
+    img: "cutting-board-red",
     price: 30,
     sale: true,
     salePercent: 3,
@@ -247,8 +247,8 @@ const PRODUCTS = [
   },
   {
     id: 29,
-    title: "Soup bowl",
-    img: "Soup-bowl",
+    title: "Keychain souvenir",
+    img: "keychain-souvenir",
     price: 50,
     sale: true,
     salePercent: 20,
