@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { deleteFavourite } from "../features/account/accountSlice";
 import { addFavourite } from "../features/account/accountSlice";
 import { useDispatch } from "react-redux";
+import Slider from "./Slider";
 
 export default function ItemsList() {
     const dispatch = useDispatch();
@@ -9,7 +10,7 @@ export default function ItemsList() {
     console.log(products);
     const user = useSelector((state) => state.account.value);
     const checkIfFavourite = (id) => { return user.favourites.find(el => el === id); };
-    return <><section> </section><section className="category" data-name="product">
+    return <><section className='section-Slider'><Slider /></section><section className="category" data-name="product">
         <div className="category__container">   {products.map((item) => <><div className="product">
             {user.name && (<button className="product__favourite" onClick={() => {
                 checkIfFavourite(item.id)

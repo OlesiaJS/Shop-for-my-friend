@@ -110,6 +110,7 @@ body {
 
 a {
     text-decoration: none;
+
 }
 
 .main{
@@ -413,5 +414,25 @@ a {
 .lefting{
     float: left;
     margin: 0 1em 0.5em 0
+}
+
+.section-Slider {
+    height: 300px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.slider-img {
+    width: 80%;
+    object-fit: contain;
+    height: 300px;
+    background-position: center;
+        margin-left: auto;
+    margin-right: auto
+}
+.text-14-slider {
+    text-decoration: none; 
+    color: white;
+font-size: smaller;
 }
 
