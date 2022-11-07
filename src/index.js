@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import FavouritesList from "./components/FavouritesList";
 import ItemsList from "./components/ItemsList";
 import Account from "./components/Account";
-
+import AboutProducts from "./components/AboutProducts";
 
 import store from './app/store';
 import { Provider } from 'react-redux';
@@ -34,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "account",
         element: <Account />,
+      },
+      {
+        path: "about",
+        element: <AboutProducts />,
       },
     ],
   },
