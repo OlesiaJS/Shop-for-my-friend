@@ -55,7 +55,7 @@ export default function Account() {
           />
         </label>
 
-        <button className="btn">Sign in</button>
+        <button className="btnMy">Sign in</button>
       </form>
 
       {/* <form id="RegistrationForm" className="userForm">
