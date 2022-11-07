@@ -117,7 +117,7 @@ a {
 
 .main{
 padding: 20px;
-height: calc(100vh - 220px);
+min-height: calc(100vh - 220px);
     background-image: url('../img-back/background.jpg');
     background-size: cover;
     background-position: center;
