@@ -104,13 +104,23 @@ body {
     margin: 0;
     font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
     font-size: 16px;
-    background: whitesmoke;
+height: 100%;
+    /* background: whitesmoke;
     background-image: url('../img-back/background.jpg');
     background-size: cover;
-background-position: center;}
+    background-position: center; */
+}
 
 a {
     text-decoration: none;
+}
+
+.main{
+padding: 20px;
+height: calc(100vh - 220px);
+    background-image: url('../img-back/background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -366,6 +376,7 @@ a {
 
 /* Footer  */
 .footer {
+    width: 100%;
     background: #ffffff;
     color: #000000;
     height: 100px;
@@ -377,6 +388,7 @@ a {
     flex-direction: column;
     border-image: url(../img-back/border.png) 80 round repeat; 
     padding: 10px;
+    width: 100%;
 }
 .footer__FB {
     width: 120px;
