@@ -9,7 +9,8 @@ import ItemsList from "./components/ItemsList";
 import Account from "./components/Account";
 import AboutProducts from "./components/AboutProducts";
 
-import store from './app/store';
+import { persistor, store } from './app/store';
+import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 
 import {
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <RouterProvider router={router} />
+    <PersistGate loading={null} persistor={persistor}>
+      <RouterProvider router={router} />
+    </PersistGate>
   </Provider>);
 
 // If you want to start measuring performance in your app, pass a function

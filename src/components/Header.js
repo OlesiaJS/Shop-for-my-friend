@@ -14,7 +14,7 @@ export default function Header() {
         <div className="container">
             <div className="header__container">
                 <Link to="/">
-                    <img src="images/logo.jpg" alt="logo" height="50" />
+                    <img src="/images/logo.jpg" alt="logo" height="50" />
                 </Link>
                 <div className="header__info">
                     Hi,   {!user.name && (
@@ -27,7 +27,7 @@ export default function Header() {
                             ? "/favourites"
                             : "/account"
                         } id="headerFavourites">
-                            <img src="images/favourite.png" alt="favourite" height="30" />
+                            <img src="/images/favourite.png" alt="favourite" height="30" />
                             <span className="header__shop--count" id="headerFavouritesCount">{user.favourites.length}</span>
                         </Link>
                     </div>
