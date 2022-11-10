@@ -8,10 +8,10 @@ import slider3 from "../assets/img-back/slider3.jpg";
 export default function Slider() {
     return (
         <Carousel>
-            <Carousel.Item style={{ 'height': '300px' }}>
+            <Carousel.Item >
                 <img className="d-block slider-img" src={slider1} alt="first-slider" />
             </Carousel.Item>
-            <Carousel.Item style={{ 'height': '300px' }}>
+            <Carousel.Item >
                 <img className="d-block slider-img" src={slider2} alt="second-slider" />
                 <Carousel.Caption>
                     <Link to="/about">
@@ -19,7 +19,7 @@ export default function Slider() {
                     </Link>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item style={{ 'height': '300px' }}>
+            <Carousel.Item >
                 <img className="d-block slider-img" src={slider3} alt="third-slider" />
             </Carousel.Item>
 

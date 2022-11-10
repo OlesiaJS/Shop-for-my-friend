@@ -105,12 +105,10 @@ body {
     font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
     font-size: 16px;
     height: 100%;
-
 }
 
 a {
     text-decoration: none;
-
 }
 
 .main{
@@ -119,27 +117,45 @@ a {
     background-image: url('../img-back/background.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: repeat-y;
 }
 
 .container {
     width: 1200px;
     margin: 0 auto;
-   
 }
+
 .text-14 {
     margin: 10px;
+}
+
+.white {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgb(58, 30, 0);
 }
 
 @media (max-width: 1200px) {
     .container {
         width: 90%;
     }
+
+
 }
 
-
-
-
-
+ 
+/*  ItemList */
+@media (max-width: 734px) {
+    .section-Slider {
+            height: 200px!Important;
+            margin: 0;
+        }
+    .carousel-item {
+             height: 200px;
+        }
+    .main {
+             background-size: contain;
+        }
+}
 
 
 /* // HEADER */
@@ -263,6 +279,7 @@ a {
         width: 100%;
         margin-right: 0;
     }
+
 }
 
 .product__favourite {
@@ -363,8 +380,19 @@ a {
     width: 100%;
     transition: 0.2s;
 }
+.errorActive {
+    display: block;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+    color: #a94442;
+    background-color: #f2dede;
+    width: 100%;
+    transition: 0.2s;
+}
 
-.userForm .error.active {
+.userForm .error .active {
     display: block;
 }
 
@@ -398,6 +426,48 @@ a {
     justify-content: space-around;
 }
 
+
+/* //Account // */
+.columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 0;
+}
+
+.columns>* {
+    width: 80%;
+    padding: 0 15px;
+}
+
+@media (max-width: 815px) {
+    .columns {
+        flex-direction: column;
+            }
+    .columns>* {
+        width: 100%;
+        border-right: 0;
+        padding: 15px 0;
+    }
+    .main {
+        background-size: contain;
+        background-repeat: repeat-y;
+        }
+    .columns>*:last-of-type {
+        border-bottom: none;
+        }
+    .columns>*:first-of-type {
+        padding-top: 0;
+        }
+}
+
+.columns>*:first-of-type {
+    padding-left: 0;
+}
+
+.columns>*:last-of-type {
+    padding-right: 0;
+    border-right: 0;
+}
 
 
 /* //About */

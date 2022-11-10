@@ -9,7 +9,7 @@ export default function Footer() {
             <img src="images/icons-fb.svg" alt="facebook" height="25" />
         </div>
         <div>
-            Made from Ukraine with love © 2022
+            Made in Ukraine with love © 2022
         </div>
 
 
