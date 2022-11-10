@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import logger from 'redux-logger';
 
 import productsSlice from "../features/products/productsSlice";
 import accountSlice from "../features/account/accountSlice";
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-    reducer: persistedReducer
+    reducer: persistedReducer, middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(logger),
 });
 
 export const persistor = persistStore(store);

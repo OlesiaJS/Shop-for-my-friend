@@ -152,9 +152,6 @@ a {
     .carousel-item {
              height: 200px;
         }
-    .main {
-             background-size: contain;
-        }
 }
 
 
@@ -439,7 +436,7 @@ a {
     padding: 0 15px;
 }
 
-@media (max-width: 815px) {
+
     .columns {
         flex-direction: column;
             }
@@ -448,17 +445,13 @@ a {
         border-right: 0;
         padding: 15px 0;
     }
-    .main {
-        background-size: contain;
-        background-repeat: repeat-y;
-        }
+
     .columns>*:last-of-type {
         border-bottom: none;
         }
     .columns>*:first-of-type {
         padding-top: 0;
         }
-}
 
 .columns>*:first-of-type {
     padding-left: 0;
@@ -513,3 +506,12 @@ a {
 font-size: smaller;
 }
 
+
+
+
+@media (max-width: 465px) {
+    .main {
+            background-size: contain;
+            background-repeat: repeat-y;
+        }
+}

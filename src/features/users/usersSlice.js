@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import db from "../../db";
-console.log('333');
 
 export const usersSlice = createSlice({
   name: "users",
@@ -9,8 +8,9 @@ export const usersSlice = createSlice({
   },
   reducers: {
     addNewUser: (state, action) => {
+      debugger;
       const isUserExist = state.value.find((el) => el.email === action.payload.email);
-
+      console.log(isUserExist);
       if (isUserExist) {
         console.log('занято');
       }

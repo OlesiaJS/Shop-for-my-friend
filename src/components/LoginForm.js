@@ -1,19 +1,22 @@
-import db from "../db";
+// import db from "../db";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../features/account/accountSlice";
 
 export default function LoginForm() {
-  const [userEmail, setUserEmail] = useState("test@gmail.com");
-  const [userPassword, setUserPassword] = useState("123");
+  const users = useSelector((state) => state.users.value);
+  console.log(users);
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
   const [showWrongUser, setshowWrongUser] = useState(true);
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
+    debugger;
     event.preventDefault();
     // Find User and Match Password
     // Get userDb from Database
-    const isUserExist = db.usersDb.find((el) => el.email === userEmail);
+    const isUserExist = users.find((el) => el.email === userEmail);
 
     if (isUserExist) {
       if (isUserExist.password === userPassword) {
