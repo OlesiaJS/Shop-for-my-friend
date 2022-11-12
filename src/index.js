@@ -8,6 +8,7 @@ import FavouritesList from "./components/FavouritesList";
 import ItemsList from "./components/ItemsList";
 import Account from "./components/Account";
 import AboutProducts from "./components/AboutProducts";
+import AboutItem from "./components/AboutItem";
 
 import { persistor, store } from './app/store';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <AboutProducts />,
+      },
+      {
+        path: "aboutItem/:itemId",
+        element: <AboutItem />,
       },
     ],
   },

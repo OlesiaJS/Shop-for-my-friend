@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewUser } from "../features/users/usersSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Registration() {
   const [userName, setUserName] = useState("");
@@ -10,6 +11,7 @@ export default function Registration() {
   const [passwordVerify, setPasswordVerify] = useState("");
   const [ErrorUserData, setErrorUserData] = useState(true);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
 
   const handleSubmit = (event) => {
@@ -18,6 +20,7 @@ export default function Registration() {
     if (userPassword === passwordVerify) {
       setErrorUserData(true);
       dispatch(addNewUser({ name: userName, email: userEmail, password: userPassword }));
+      navigate("/");
     }
     else {
       setErrorUserData(false);

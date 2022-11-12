@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { deleteFavourite } from "../features/account/accountSlice";
 import { addFavourite } from "../features/account/accountSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import Slider from "./Slider";
 
 export default function ItemsList() {
@@ -22,8 +23,10 @@ export default function ItemsList() {
                     : "images/product__favourite.png"}
                     alt="favourite" height="20" />
             </button>)}
-            <img src={"images/products/" + item.img + ".jpg"} className="product__img" alt="imgName"
-                width={'100%'} />
+            <Link to={'aboutItem/' + item.id}>
+                <img src={"/images/products/" + item.img + ".jpg"} className="product__img" alt="imgName"
+                    width={'100%'} />
+            </Link>
             <p className="product__title">{item.title}</p>
             {item.sale && (
                 <div className="product__sale">

@@ -6,7 +6,7 @@ export default function Footer() {
 
         <div className="footer__FB">
             <a rel="noreferrer" target="_blank" href="https://www.facebook.com/profile.php?id=100043860157583&sk=photos_by">about me </a>
-            <img src="images/icons-fb.svg" alt="facebook" height="25" />
+            <img src="/images/icons-fb.svg" alt="facebook" height="25" />
         </div>
         <div>
             Made in Ukraine with love © 2022

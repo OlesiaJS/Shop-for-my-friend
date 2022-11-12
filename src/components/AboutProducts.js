@@ -3,7 +3,7 @@ export default function AboutProducts() {
     return <section className="container">
         <div className="info">
             <h2>Petrykivka painting</h2>
-            <p className="lefting"><img src="images/Wiki.jpg" alt="imgName"
+            <p className="lefting"><img src="/images/Wiki.jpg" alt="imgName"
                 width={'100px'}></img></p>
             <p className="text-14">Petrykivka painting (or simply "Petrykivka"; Ukrainian: Петриківський розпис ) is a traditional Ukrainian decorative painting style, originating from the village of Petrykivka in Dnipropetrovsk oblast of Ukraine, where it was traditionally used to decorate house walls and everyday household items. The earliest known examples of this style date from the 18th century, but it continues to thrive and develop as a modern art form.
                 The distinctive features of this folk art style are its flower patterns, distinctive brush techniques, and its traditionally white background (contemporary painters, however, often work on black, green, red or blue backgrounds).

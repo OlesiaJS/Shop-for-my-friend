@@ -1,7 +1,8 @@
-// import db from "../db";
+
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../features/account/accountSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const users = useSelector((state) => state.users.value);
@@ -10,9 +11,9 @@ export default function LoginForm() {
   const [userPassword, setUserPassword] = useState("");
   const [showWrongUser, setshowWrongUser] = useState(true);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
-    debugger;
+
     event.preventDefault();
     // Find User and Match Password
     // Get userDb from Database
@@ -22,6 +23,7 @@ export default function LoginForm() {
       if (isUserExist.password === userPassword) {
         setshowWrongUser(true);
         dispatch(login(isUserExist));
+        navigate("/");
         // window.location.href = "/favourites";
       }
     }
