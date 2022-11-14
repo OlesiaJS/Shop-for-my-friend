@@ -17,7 +17,7 @@ export default function FavouritesList() {
     console.log(checkIfFavourite());
     console.log(listOfFavorites);
     return <section className="category" data-name="product">
-        <h2 className="product">Favourite Items</h2>
+        <h2 className="titleHeader">My Favourites</h2>
         <div className="category__container">   {listOfFavorites.map((item) =>
             <><div className="product">
                 <button className="product__favourite" onClick={() => {

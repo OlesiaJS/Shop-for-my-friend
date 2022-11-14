@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 
 export default function Account() {
   return (
-    <div className="columns">
+    <div className="Accountlist">
       <LoginForm />
       <Registration />
     </div>

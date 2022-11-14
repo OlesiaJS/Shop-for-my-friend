@@ -1,30 +1,56 @@
 // import db from "../db";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNewUser } from "../features/users/usersSlice";
 import { useNavigate } from "react-router-dom";
+import { login } from "../features/account/accountSlice";
+import Modal from "./Modal";
 
 export default function Registration() {
+  const [modalActive, setModalActive] = useState(false);
+  const users = useSelector((state) => state.users.value);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [passwordVerify, setPasswordVerify] = useState("");
-  const [ErrorUserData, setErrorUserData] = useState(true);
+  const [wrongEmail, setWrongEmail] = useState(false);
+  const [wrongPassword, setWrongPassword] = useState(false);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
   const handleSubmit = (event) => {
-    event.preventDefault();
 
-    if (userPassword === passwordVerify) {
-      setErrorUserData(true);
-      dispatch(addNewUser({ name: userName, email: userEmail, password: userPassword }));
+    event.preventDefault();
+    const isEmailExist = users.find((el) => el.email === userEmail);
+    const verifyPassword = userPassword === passwordVerify;
+    const isUserExist = users.find((el) => el.password === userPassword);
+    console.log(verifyPassword);
+    console.log('isUserExist', isUserExist);
+    if (isEmailExist && isUserExist) {
+      dispatch(login(isEmailExist));
       navigate("/");
     }
     else {
-      setErrorUserData(false);
-      console.log("error");
+      setWrongEmail(true);
+    }
+
+    if (!isEmailExist) {
+      setWrongEmail(false);
+      if (verifyPassword) {
+        dispatch(
+          addNewUser({
+            name: userName,
+            email: userEmail,
+            password: userPassword,
+          })
+        );
+        setModalActive(true);
+        setWrongPassword(false);
+      }
+      else {
+        setWrongPassword(true);
+      }
     }
   };
   return (
@@ -32,7 +58,9 @@ export default function Registration() {
       <form id="RegistrationForm" className="userForm" onSubmit={handleSubmit}>
         <p className="title white">Quick Registration</p>
         <p className="desription white">For new customers</p>
-        {!ErrorUserData && <div className="errorActive">Invalid email address or password.</div>}
+        {wrongEmail && <div className="errorActive"> this email is already exist</div>}
+        {wrongPassword && <div className="errorActive">Passwords do not match</div>}
+
         <label>
           <input
             type="text"
@@ -79,6 +107,7 @@ export default function Registration() {
         </label>
         <button className="btnMy">Create Account</button>
       </form>
+      <Modal active={modalActive} setActive={setModalActive} />
     </div>
   );
 }

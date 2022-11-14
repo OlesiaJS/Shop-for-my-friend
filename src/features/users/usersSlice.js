@@ -8,7 +8,6 @@ export const usersSlice = createSlice({
   },
   reducers: {
     addNewUser: (state, action) => {
-      debugger;
       const isUserExist = state.value.find((el) => el.email === action.payload.email);
       console.log(isUserExist);
       if (isUserExist) {

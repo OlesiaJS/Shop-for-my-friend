@@ -7,18 +7,17 @@ import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
   const users = useSelector((state) => state.users.value);
   console.log(users);
-  const [userEmail, setUserEmail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
+  const [userEmail, setUserEmail] = useState("test@gmail.com");
+  const [userPassword, setUserPassword] = useState("123");
   const [showWrongUser, setshowWrongUser] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSubmit = (event) => {
-
     event.preventDefault();
     // Find User and Match Password
     // Get userDb from Database
     const isUserExist = users.find((el) => el.email === userEmail);
-
+    console.log(isUserExist);
     if (isUserExist) {
       if (isUserExist.password === userPassword) {
         setshowWrongUser(true);
@@ -27,7 +26,10 @@ export default function LoginForm() {
         // window.location.href = "/favourites";
       }
     }
-    else { setshowWrongUser(false); }
+    else {
+      setshowWrongUser(false);
+    }
+    console.log(showWrongUser);
   };
   return (
     <div className="columns">
@@ -35,7 +37,7 @@ export default function LoginForm() {
         <h2 className="title white">Secure Sign In</h2>
         <p className="desription white">For current customers</p>
 
-        {!showWrongUser && <div className="error active">Invalid email address or password.</div>}
+        {!showWrongUser && <div className="errorActive">Invalid email address or password.</div>}
 
         <label>
           <input
