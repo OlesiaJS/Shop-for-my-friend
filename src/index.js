@@ -9,7 +9,7 @@ import ItemsList from "./components/ItemsList";
 import Account from "./components/Account";
 import AboutProducts from "./components/AboutProducts";
 import AboutItem from "./components/AboutItem";
-
+import Cart from "./components/Cart";
 import { persistor, store } from './app/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
@@ -28,11 +28,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <ItemsList />,
-      }, {
+      },
+      {
         path: "favourites",
         element: <FavouritesList />,
       },
-
+      {
+        path: "cart",
+        element: <Cart />,
+      },
       {
         path: "account",
         element: <Account />,

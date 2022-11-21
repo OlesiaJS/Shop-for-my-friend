@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import { deleteFavourite } from "../features/account/accountSlice";
-import { addFavourite } from "../features/account/accountSlice";
+import { deleteFavourite, addFavourite, addItemInCart, deleteItemInCart } from "../features/account/accountSlice";
+import { } from "../features/account/accountSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Slider from "./Slider";
@@ -8,9 +8,9 @@ import Slider from "./Slider";
 export default function ItemsList() {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.products.value);
-    console.log(products);
     const user = useSelector((state) => state.account.value);
     const checkIfFavourite = (id) => { return user.favourites.find(el => el === id); };
+    const checkIfCart = (id) => { return user.cart.find(el => el.id === id); };
     return <><section className='section-Slider'><Slider /></section><section className="category" data-name="product">
         <div className="category__container">   {products.map((item) => <><div className="product">
             {user.name && (<button className="product__favourite" onClick={() => {
@@ -35,6 +35,16 @@ export default function ItemsList() {
                 </div>)}
             <div className="product__info">
                 <span className="product__price">${item.price - (item.price * (item.salePercent || 0)) / 100}</span>
+                {user.name && (<button className='product__cartCommon' onClick={() => {
+                    checkIfCart(item.id)
+                        ? dispatch(deleteItemInCart(item.id))
+                        : dispatch(addItemInCart(item.id));
+                }}>
+                    <img src={checkIfCart(item.id)
+                        ? "images/cart--true.png"
+                        : "images/cart.png"}
+                        alt="cart" height="20" />
+                </button>)}
             </div>
         </div>
         </>

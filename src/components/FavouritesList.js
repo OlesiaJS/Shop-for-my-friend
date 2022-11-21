@@ -14,7 +14,6 @@ export default function FavouritesList() {
         return result;
     });
     const checkIfFavourite = (id) => { return user.favourites.find(el => el === id); };
-    console.log(checkIfFavourite());
     console.log(listOfFavorites);
     return <section className="category" data-name="product">
         <h2 className="titleHeader">My Favourites</h2>
@@ -49,44 +48,5 @@ export default function FavouritesList() {
         )}
         </div>
     </section>;
-    // <div className="favourites__container">
-    //     <div className="table__container">
-    //         <table className="order__table" id="favouriteTable">
-    //             <caption>Favourite Items</caption>
-    //             <thead>
-    //                 <tr>
-    //                     <th>Item Description</th>
-    //                     <th>Price</th>
-    //                     <th>Sale</th>
-    //                     <th>Total</th>
-    //                     <th>Action</th>
-    //                 </tr>
-    //             </thead>
-    //             <tbody>
-    //                 {listOfFavorites.map((item) =>
-    //                     <tr>
-    //                         <td>
-    //                             <div className="item__info">
-    //                                 <img src={"images/products/" + item.img + ".jpg"} alt="img" height="100" />
-    //                                 <div>
-    //                                     <p className="item__info--title">{item.title}</p>
-    //                                 </div>
-    //                             </div>
-    //                         </td>
-    //                         <td>${item.price}</td>
-    //                         <td>
-    //                             {item.sale && (<span className="item__sale">- {item.salePercent}%</span>)}
 
-    //                         </td>
-    //                         <td>${item.price - (item.price * (item.salePercent || 0)) / 100}</td>
-    //                         <td>
-    //                             <button className="item__favourite"><img src="images/product__favourite--true.png" alt="favourite" height="20" /></button>
-    //                         </td>
-    //                     </tr>
-    //                 )}
-
-    //             </tbody>
-    //         </table>
-    //     </div>
-    // </div>;
 };

@@ -295,6 +295,11 @@ const USERS = [
     email: "test@gmail.com",
     password: "123",
     favourites: [9, 18, 7],
+    cart: [{
+      id: 12, count: 2
+    }, {
+      id: 2, count: 1
+    }],
     status: false,
   },
 ];

@@ -20,7 +20,9 @@ export const usersSlice = createSlice({
           email: action.payload.email,
           password: action.payload.password,
           favourites: [],
+          cart: [],
           status: false,
+
         }];
       }
     }
