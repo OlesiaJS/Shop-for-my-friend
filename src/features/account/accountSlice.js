@@ -44,21 +44,22 @@ export const accountSlice = createSlice({
 
     increment: (state, action) => {
       console.log('increment');
-      let newCart = state.value.cart.find(item => item.id === action.payload.id);
-      newCart.count = 1 + newCart.count;
+      // let newCart = state.value.cart.find(item => item.id === action.payload.id);
+      // newCart.count = 1 + cart.count;
       // state.value.cart = [...state.value.cart.filter(item => item.id !== action.payload.id), newCart];
     },
 
     decrement: (state, action) => {
-      let cart = state.value.cart.find(item => item.id === action.payload.id);
-      if (cart.count > 1) {
-        cart.count = cart.count - 1;
-      }
-      else {
-        console.log('decrement');
-      }
+      // let cart = state.value.cart.find(item => item.id === action.payload.id);
+      // if (cart.count > 1) {
+      //   cart.count = cart.count - 1;
+      // }
+      // else {
+      console.log('decrement');
+      // }
 
     },
+
     login: (state, action) => {
       state.value = {
         name: action.payload.name,

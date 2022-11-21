@@ -24,6 +24,7 @@ export default function Cart() {
         return listOrder;
     });
 
+    console.log('listOrder', listOrder);
     console.log(listOrderCount);
 
     const total = listOrder.reduce((acc, curr) => acc + curr.price * curr.count, 0);
