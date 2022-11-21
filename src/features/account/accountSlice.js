@@ -50,13 +50,13 @@ export const accountSlice = createSlice({
     },
 
     decrement: (state, action) => {
-      // let cart = state.value.cart.find(item => item.id === action.payload.id);
-      // if (cart.count > 1) {
-      //   cart.count = cart.count - 1;
-      // }
-      // else {
-      console.log('decrement');
-      // }
+      let cart = state.value.cart.find(item => item.id === action.payload.id);
+      if (cart.count > 1) {
+        cart.count = cart.count - 1;
+      }
+      else {
+        console.log('decrement');
+      }
 
     },
     login: (state, action) => {

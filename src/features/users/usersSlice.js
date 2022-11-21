@@ -27,7 +27,6 @@ export const usersSlice = createSlice({
       }
     },
     setUserInfo: (state, action) => {
-      debugger;
       state.value.find((el) => {
         console.log('setUserInfo');
         if (el.name === action.payload.name) {
