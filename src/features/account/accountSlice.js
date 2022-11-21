@@ -43,9 +43,8 @@ export const accountSlice = createSlice({
     },
 
     increment: (state, action) => {
-      // console.log(state.value.cart);
-      // let newCart = state.value.cart.find(item => item.id === action.payload.id);
-      // newCart.count = 1 + newCart.count;
+      // let cart = state.value.cart.find(item => item.id === action.payload.id);
+      // cart.count = 1 + cart.count;
       // state.value.cart = [...state.value.cart.filter(item => item.id !== action.payload.id), newCart];
     },
 
