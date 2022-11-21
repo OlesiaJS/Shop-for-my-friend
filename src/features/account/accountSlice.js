@@ -43,6 +43,7 @@ export const accountSlice = createSlice({
     },
 
     increment: (state, action) => {
+      console.log('increment');
       // let cart = state.value.cart.find(item => item.id === action.payload.id);
       // cart.count = 1 + cart.count;
       // state.value.cart = [...state.value.cart.filter(item => item.id !== action.payload.id), newCart];
@@ -54,7 +55,7 @@ export const accountSlice = createSlice({
       //   cart.count = cart.count - 1;
       // }
       // else {
-      //   console.log('удалить с корзины другоя кнопка');
+      console.log('decrement');
       // }
 
     },
