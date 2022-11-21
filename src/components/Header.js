@@ -2,14 +2,17 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../features/account/accountSlice";
 import { useDispatch } from "react-redux";
-
+import { setUserInfo } from "../features/users/usersSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
 
     const dispatch = useDispatch();
     const user = useSelector((state) => state.account.value);
-    const store = useSelector((state) => state);
-    console.log(store);
+    console.log(user);
+    // const store = useSelector((state) => state);
+    const navigate = useNavigate();
+
     return <header className="header">
         <div className="container">
             <div className="header__container">
@@ -18,7 +21,7 @@ export default function Header() {
                 </Link>
                 <div className="header__info">
                     Hi,   {!user.name && (
-                        <Link to="/account" className="header__user" id="headerUser">
+                        <Link to="/account" className="header__user">
                             Log in
                         </Link>)} {user.name}
 
@@ -39,9 +42,11 @@ export default function Header() {
                         </Link>
                     </div>
                     {user.name && (
-                        <button className="header__logout" onClick={() =>
-                            dispatch(logout())
-                        } style={{ display: 'block' }} id="headerLogout">Log out</button>
+                        <button className="header__logout" onClick={() => {
+                            dispatch(setUserInfo(user));
+                            dispatch(logout());
+                            navigate("/");
+                        }} style={{ display: 'block' }}>Log out</button>
                     )}
 
                 </div>

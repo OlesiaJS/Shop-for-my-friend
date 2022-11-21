@@ -35,7 +35,7 @@ export const accountSlice = createSlice({
       console.log('action');
       // const { id } = action.payload;
       state.value.cart.push({ id: action.payload, count: 1 });
-      console.log('state', state);
+      console.log('state', state.value.cart);
     },
 
     deleteItemInCart: (state, action) => {
@@ -44,8 +44,8 @@ export const accountSlice = createSlice({
 
     increment: (state, action) => {
       console.log('increment');
-      // let cart = state.value.cart.find(item => item.id === action.payload.id);
-      // cart.count = 1 + cart.count;
+      let newCart = state.value.cart.find(item => item.id === action.payload.id);
+      newCart.count = 1 + newCart.count;
       // state.value.cart = [...state.value.cart.filter(item => item.id !== action.payload.id), newCart];
     },
 
@@ -59,7 +59,6 @@ export const accountSlice = createSlice({
       // }
 
     },
-
     login: (state, action) => {
       state.value = {
         name: action.payload.name,

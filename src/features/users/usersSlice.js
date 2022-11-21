@@ -25,11 +25,22 @@ export const usersSlice = createSlice({
 
         }];
       }
-    }
+    },
+    setUserInfo: (state, action) => {
+      debugger;
+      state.value.find((el) => {
+        console.log('setUserInfo');
+        if (el.name === action.payload.name) {
+          el.favourites = action.payload.favourites;
+          el.cart = action.payload.cart;
+        }
+        return "";
+      });
+    },
   }
 });
 
 
-export const { addNewUser } = usersSlice.actions;
+export const { addNewUser, setUserInfo } = usersSlice.actions;
 
 export default usersSlice.reducer;

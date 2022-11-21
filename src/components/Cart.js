@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteItemInCart } from "../features/account/accountSlice";
 import { increment, decrement } from "../features/account/accountSlice";
-// import Counter from "./common/Counter";
+
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -9,7 +9,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
 export default function Cart() {
-    debugger;
+
     const shoppingCarts = useSelector((state) => state.account.value.cart);
     const products = useSelector(state => state.products.value);
     const dispatch = useDispatch();
@@ -18,6 +18,7 @@ export default function Cart() {
         let RESULT = products.find(el => el.id === idOrd.id);
         return RESULT;
     });
+
     let listOrderCount = shoppingCarts.map((idOrd) => {
         (listOrder.find((el) => el.id === idOrd.id))['count'] = idOrd.count;
         return listOrder;
