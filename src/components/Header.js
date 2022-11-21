@@ -28,7 +28,14 @@ export default function Header() {
                             : "/account"
                         } id="headerFavourites">
                             <img src="/images/favourite.png" alt="favourite" height="30" />
-                            <span className="header__shop--count" id="headerFavouritesCount">{user.favourites.length}</span>
+                            <span className="header__shop--count" >{user.favourites.length}</span>
+                        </Link>
+                        <Link to={user.name
+                            ? "/cart"
+                            : "/account"
+                        } >
+                            <img src="/images/cart.png" alt="cart" height="30" />
+                            <span className="header__shop--count">{user.cart.length}</span>
                         </Link>
                     </div>
                     {user.name && (
