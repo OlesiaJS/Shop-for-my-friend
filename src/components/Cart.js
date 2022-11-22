@@ -16,16 +16,10 @@ export default function Cart() {
 
     const listOrder = shoppingCarts.map((idOrd) => {
         let RESULT = products.find(el => el.id === idOrd.id);
-        return RESULT;
-    });
-
-    let listOrderCount = shoppingCarts.map((idOrd) => {
-        (listOrder.find((el) => el.id === idOrd.id))['count'] = idOrd.count;
-        return listOrder;
+        return { ...RESULT, ...idOrd };
     });
 
     console.log('listOrder', listOrder);
-    console.log(listOrderCount);
 
     const total = listOrder.reduce((acc, curr) => acc + curr.price * curr.count, 0);
 
