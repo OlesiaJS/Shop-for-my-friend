@@ -9,11 +9,9 @@ Features
 * * Login / Register
 * Saving data using local storage
 * Responsive design
-* Styled Components
-* Tech Stack
 * JS/ES6+
 * React
 * Redux
 * React Router
 * Material UI
-* LocalStorag
+
