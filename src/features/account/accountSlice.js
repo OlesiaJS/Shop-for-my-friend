@@ -43,21 +43,20 @@ export const accountSlice = createSlice({
     },
 
     increment: (state, action) => {
-      console.log('increment');
-      // let newCart = state.value.cart.find(item => item.id === action.payload.id);
-      // newCart.count = 1 + cart.count;
-      // state.value.cart = [...state.value.cart.filter(item => item.id !== action.payload.id), newCart];
+      console.log('increament');
+      // state.value.cart.forEach((item) => {
+      //   if (item.id === action.payload.id) {
+      //     item.count = 1 + action.payload.count;
+      //   }
+      // });
     },
 
     decrement: (state, action) => {
+      console.log('decreament');
       // let cart = state.value.cart.find(item => item.id === action.payload.id);
       // if (cart.count > 1) {
-      //   cart.count = cart.count - 1;
+      //   cart.count = action.payload.count - 1;
       // }
-      // else {
-      console.log('decrement');
-      // }
-
     },
 
     login: (state, action) => {

@@ -34,7 +34,7 @@ export default function Cart() {
         <h2 className="titleHeader">My Order</h2>
         <div className="category__container">
             {(shoppingCarts.length < 0) && <p>"Корзина пуста"</p>}
-            <div className="content-wrapper shopping-container pd-1-2">
+            <div className="shopping-container">
                 <ul className="shopping-list">
                     {listOrder.map((item, i) => (
                         <li className="shopping-item">
@@ -69,30 +69,6 @@ export default function Cart() {
                     <p>{total} $  </p>
                 </div>
             </div>
-            {/* {listOrder.map((item) =>
-                <><div className="product">
-                    <button className="product__favourite" onClick={() => {
-                        checkIfFOrder(item.id)
-                            ? dispatch(deleteItemInCart(item.id))
-                            : dispatch(addItemInCart(item.id));
-
-                    }}>
-                        <img src="/images/delete.png" alt="delete" height="20" />
-                    </button>
-                    <img src={"/images/products/" + item.img + ".jpg"} className="product__img" alt="imgName"
-                        width={'100%'} />
-                    <p className="product__title">{item.title}</p>
-                    {item.sale && (
-                        <div className="product__sale">
-                            <span className="product__sale--old">${item.price}</span>
-                            <span className="product__sale--percent">-{item.salePercent}%</span>
-                        </div>)}
-                    <div className="product__info">
-                        <span className="product__price">${item.price - (item.price * (item.salePercent || 0)) / 100}</span>
-                    </div>
-                </div>
-                </>
-            )} */}
         </div>
     </section>;
 

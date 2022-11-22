@@ -6,11 +6,9 @@ import { setUserInfo } from "../features/users/usersSlice";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
-
     const dispatch = useDispatch();
     const user = useSelector((state) => state.account.value);
     console.log(user);
-    // const store = useSelector((state) => state);
     const navigate = useNavigate();
 
     return <header className="header">

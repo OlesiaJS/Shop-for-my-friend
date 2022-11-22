@@ -550,7 +550,6 @@ font-size: smaller;
 }
 
 
-
 /* // modal */
 .modalSucces {
     height: 100vh;
@@ -592,6 +591,7 @@ font-size: smaller;
     box-shadow: 0px 0px 10px #82929b;
     border-radius: 5px;
     background-color: #ffffff;
+    padding: 15px;
 }
 .shopping-item {
     display: -ms-grid;
@@ -719,9 +719,6 @@ font-size: smaller;
     padding: 0;
 }
 
-.pd-1-2 {
-    padding: 1em 0.5em;
-}
 
 .picture-about {
     max-height: 150px;

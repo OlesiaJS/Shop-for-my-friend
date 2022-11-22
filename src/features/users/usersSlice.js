@@ -28,7 +28,6 @@ export const usersSlice = createSlice({
     },
     setUserInfo: (state, action) => {
       state.value.find((el) => {
-        console.log('setUserInfo');
         if (el.name === action.payload.name) {
           el.favourites = action.payload.favourites;
           el.cart = action.payload.cart;
